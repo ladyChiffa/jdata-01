@@ -1,3 +1,4 @@
+version: "3.8"
 services:
   postgres:
     image: postgres:13.3
@@ -10,3 +11,25 @@ services:
       - "5432:5432"
     volumes:
       - ./pg_data:/var/lib/postgresql/data
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    volumes:
+      - mongodb_data:/data/db
+    restart: unless-stopped
+
+  appauth1:
+    build: ./
+    image: 'appauth1'
+    ports:
+      - '8080:8080'
+
+volumes:
+  mongodb_data:
+
