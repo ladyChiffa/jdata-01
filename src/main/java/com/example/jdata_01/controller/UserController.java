@@ -1,5 +1,6 @@
 package com.example.jdata_01.controller;
 
+import com.example.jdata_01.model.Product;
 import com.example.jdata_01.model.User;
 import com.example.jdata_01.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -9,11 +10,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
 public class UserController {
-    private final UserService userService = null;
+    private final UserService userService;
+
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<User> getProductById(@PathVariable String id) {

@@ -15,5 +15,6 @@ public class MongoDBClient {
         Document d = new Document("name", "iPhone 15").append("price", 90_000)
                 .append("inStock", true);
         collection.insertOne(d);
+        System.out.println(d);
     }
 }

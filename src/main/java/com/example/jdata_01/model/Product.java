@@ -24,10 +24,6 @@ public class Product {
     private Address manufacturer;
     private List<Review> reviews;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
