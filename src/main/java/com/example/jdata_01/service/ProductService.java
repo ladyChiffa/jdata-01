@@ -2,6 +2,7 @@ package com.example.jdata_01.service;
 
 import com.example.jdata_01.model.Product;
 import com.example.jdata_01.repository.ProductRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.repository.support.MongoRepositoryFactory;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+@NoArgsConstructor(force = true)
 @RequiredArgsConstructor
 public class ProductService {
     private final ProductRepository productRepository;
