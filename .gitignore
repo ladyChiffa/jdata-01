@@ -1,6 +1,7 @@
 pg_data
 mongodb_data
 .idea
+.gigaide
 
 HELP.md
 target/
